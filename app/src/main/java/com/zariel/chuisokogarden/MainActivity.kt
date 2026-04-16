@@ -3,10 +3,12 @@ package com.zariel.chuisokogarden
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ProgressBar
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,17 +25,28 @@ class MainActivity : AppCompatActivity() {
 
         signIn.setOnClickListener {
 
-            val signInIntent = Intent(applicationContext, signIn::class.java)
+            val signInIntent = Intent(applicationContext, SignIn::class.java)
             startActivity(signInIntent)
         }
+
 
         val signUp=findViewById<Button>(R.id.signup)
 
         signUp.setOnClickListener {
 
-            val signUpIntent = Intent(applicationContext, signUp::class.java)
+            val signUpIntent = Intent(applicationContext, SignUp::class.java)
             startActivity(signUpIntent)
         }
+
+//        fetch progress
+        val progressbar=findViewById<ProgressBar>(R.id.progressbar)
+        val recyclerView=findViewById<RecyclerView>(R.id.recyclarView)
+
+
+        val api="https://shinejoe.alwaysdata.net/api/getproductdetails"
+
+        val helper= ApiHelper(applicationContext)
+        helper.loadProducts(api,recyclerView,progressbar)
 
 
 

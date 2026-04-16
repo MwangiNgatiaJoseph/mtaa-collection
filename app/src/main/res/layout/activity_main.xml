@@ -1,56 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:orientation="vertical"
-    android:backgroundTint="#00D4C9"
-    android:background="#0440f0"
+    android:backgroundTint="#5D00BCD4"
+    android:background="#11CAE2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <TextView
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MtaaCollection"
-        android:textColor="@color/white"
-        android:backgroundTint="#B48F8F"
-        android:background="@drawable/shape"
-        android:layout_marginTop="30dp"
-        android:padding="10dp"
-        android:textSize="35dp"
-        android:layout_margin="20dp"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:fontFamily="sans-serif-condensed-light"
-        />
-    <Button
+        android:orientation="horizontal"
+
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="JOE SPA"
+            android:textColor="@color/white"
+            android:backgroundTint="#2196F3"
+            android:background="@drawable/shape"
+            android:textSize="35dp"
+            android:layout_margin="20dp"
+            android:textStyle="bold"
+            android:textAlignment="textStart"
+            android:fontFamily="sans-serif-condensed-light"
+            />
+
+        <Button
+            android:id="@+id/signin"
+            android:layout_width="84dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="-250sp"
+            android:paddingTop="10sp"
+            android:padding="1dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
+            android:textAlignment="center"
+            android:backgroundTint="#00BCD4"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="Sign In"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/signup"
+            android:layout_width="84dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20sp"
+            android:paddingTop="10sp"
+            android:padding="1dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
+            android:textAlignment="center"
+            android:backgroundTint="#00BCD4"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="Sign Up"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+
+
+    </LinearLayout>
+
+
+    <ProgressBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:layout_marginTop="30dp"
-        android:text="Sign Up"
-        android:textSize="20dp"
-        android:backgroundTint="#673AB7"
-        android:fontFamily="sans-serif-condensed-light"
-        android:id="@+id/signup"
+        android:id="@+id/progressbar"
         />
-    <Button
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclarView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:layout_marginTop="30dp"
-        android:text="Sign In"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:backgroundTint="#673AB7"
-        android:fontFamily="sans-serif-condensed-light"
-        android:id="@+id/signin"
+        tools:listitem="@layout/single_item"
         />
-
-
-
-
 
 </LinearLayout>
+
+
+
+
+
+
+
+</ScrollView>
