@@ -50,6 +50,22 @@ class MainActivity : AppCompatActivity() {
 
 
 
+        val aboutbutton=findViewById<Button>(R.id.about_button)
+
+        aboutbutton.setOnClickListener {
+            val aboutbuttonIntent = Intent(applicationContext, About::class.java)
+            startActivity(aboutbuttonIntent)
+        }
+
+        val speaktext=findViewById<Button>(R.id.speak_text)
+
+        speaktext.setOnClickListener {
+            val speaktextIntent = Intent(applicationContext, SpeechToTextActivity::class.java)
+            startActivity(speaktextIntent)
+        }
+
+
+
 
     }
 }
